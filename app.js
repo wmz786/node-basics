@@ -1,14 +1,17 @@
-// console.log(__filename);
-// console.log(__dirname);
-// console.log(require);
-// console.log(process);
-// console.log(module);
+const os = require("node:os");
 
-const names = require("./names");
-const sayHi = require("./utils");
-const alt = require("./alternative");
-require("./mind-grenade");
+const info = {
+  type: os.type(),
+  version: os.version(),
+  user: os.userInfo(),
+  uptime: os.uptime(),
+  arch: os.arch(),
+  CPU: os.cpus(),
+  freeMemory: os.freemem(),
+  totalMemory: os.totalmem(),
+  hostName: os.hostname(),
+  platform: os.platform(),
+  loadavg: os.loadavg(),
+};
 
-// console.log(alt);
-// sayHi(names.ahmad);
-// sayHi(names.john);
+console.log(info);
