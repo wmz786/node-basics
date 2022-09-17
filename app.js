@@ -1,17 +1,14 @@
-const os = require("node:os");
+const path = require("node:path");
 
-const info = {
-  type: os.type(),
-  version: os.version(),
-  user: os.userInfo(),
-  uptime: os.uptime(),
-  arch: os.arch(),
-  CPU: os.cpus(),
-  freeMemory: os.freemem(),
-  totalMemory: os.totalmem(),
-  hostName: os.hostname(),
-  platform: os.platform(),
-  loadavg: os.loadavg(),
-};
+const sep = path.sep;
+console.log(sep);
 
-console.log(info);
+// separators doesn't count
+const filePath = path.join("/something///", "subfolder", "text.txt");
+console.log(filePath);
+
+const baseName = path.basename(filePath);
+console.log(baseName);
+
+const absolute = path.resolve(__dirname, "something", "sub");
+console.log(absolute);
